@@ -1,0 +1,137 @@
+* {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000000;
+}
+
+#app * {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}
+
+input {
+  height: 20px;
+  line-height: 20px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.task-completed .action-button {
+  color: #ffff00;
+  border-color: #ffff00;
+}
+
+.action-button{
+  padding: 3px 5px;
+
+  text-decoration: inherit;
+  color: #42b983;
+  font-weight: bold;
+
+  border: 1px solid #42b983;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #2c3e50;
+    color: #2c3e50;
+  }
+}
+
+
+
+.card-buttons {
+  flex-direction: row !important;
+  justify-content: flex-end;
+
+  .action-button {
+    margin: 0;
+  }
+}
+
+.todo-list {
+  padding: 0 10px 10px;
+
+  .todo-list-header {
+    margin: 15px auto 10px 5px;
+  }
+
+  .task-list {
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .task-card {
+      width: 100%;
+      max-width: 300px;
+      margin: 20px;
+      padding: 5px;
+
+      border-radius: 10px;
+      box-shadow: 0 0 10px 0 rgba(44, 62, 80, 0.7);
+
+      &.task-completed {
+        background: rgba(85, 85, 85, 0.5);
+      }
+
+      .task-title{
+        margin: 5px;
+        padding: 0 5px 5px;
+        font-size: 16pt;
+        font-weight: bold;
+        border-bottom: 1px solid rgba(44, 62, 80, 0.7);
+      }
+
+      .task-created-time {
+        margin: 5px 10px 0;
+        font-size: 10pt;
+        color: #555;
+      }
+
+      .task-description {
+        margin: 5px 10px;
+      }
+
+      .card-buttons {
+        margin: 0;
+
+        .action-button {
+          margin: 5px;
+        }
+      }
+    }
+  }
+}
+
+.task-form {
+  padding: 15px;
+
+  .task-card {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 5px;
+
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(44, 62, 80, 0.7);
+
+    * {
+      margin: 5px;
+    }
+
+    .card-buttons {
+      margin: 0;
+    }
+  }
+}
