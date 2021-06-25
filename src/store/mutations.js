@@ -1,3 +1,5 @@
+import Vue from "vue";
+
 export default {
   addTaskToList(state, task) {
     state.taskList.push(task);
@@ -13,5 +15,9 @@ export default {
   toggleTaskStatus(state, taskID) {
     let task = state.taskList.find((task) => task.id === taskID);
     task.completed = !task.completed;
+  },
+  deleteTask(state, taskID) {
+    let taskIndex = state.taskList.findIndex((task) => task.id === taskID);
+    Vue.delete(state.taskList, taskIndex);
   },
 };

@@ -4,6 +4,9 @@
     <div class="task-created-time">{{ taskCreatedTime }}</div>
     <div class="task-description">{{ task.description }}</div>
     <div class="card-buttons">
+      <div class="action-button action-button-delete" @click="deleteTask">
+        Delete
+      </div>
       <router-link
         :to="{ name: 'EditTask', params: { id: task.id } }"
         class="action-button"
@@ -33,6 +36,9 @@ export default {
   methods: {
     toggleStatus() {
       this.$store.dispatch("toggleTaskStatus", { taskID: this.task.id });
+    },
+    deleteTask() {
+      this.$store.dispatch("deleteTask", { taskID: this.task.id });
     },
   },
 };

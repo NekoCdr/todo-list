@@ -13,4 +13,7 @@ export default {
   toggleTaskStatus(context, { taskID }) {
     context.commit("toggleTaskStatus", taskID);
   },
+  deleteTask(context, { taskID }) {
+    context.commit("deleteTask", taskID);
+  },
 };

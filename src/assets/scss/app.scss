@@ -1,3 +1,17 @@
+$delete-button-color-completed: #e00000;
+$delete-button-color: #ff0000;
+
+@mixin delete-button($color) {
+  color: $color;
+  border: 1px solid $color;
+
+  &:hover {
+    color: $color;
+    border: 1px solid $color;
+    box-shadow: 0 0 3px 0 $color, inset 0 0 3px 0 $color;
+  }
+}
+
 * {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,6 +43,10 @@ textarea {
 .task-completed .action-button {
   color: #ffff00;
   border-color: #ffff00;
+
+  &-delete {
+    @include delete-button($delete-button-color-completed)
+  }
 }
 
 .action-button{
@@ -46,9 +64,11 @@ textarea {
     border-color: #2c3e50;
     color: #2c3e50;
   }
+
+  &-delete {
+    @include delete-button($delete-button-color)
+  }
 }
-
-
 
 .card-buttons {
   flex-direction: row !important;
