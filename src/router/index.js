@@ -13,14 +13,12 @@ const routes = [
   {
     path: "/task/new",
     name: "NewTask",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/TaskForm"),
+    component: () => import("../views/TaskForm"),
   },
   {
     path: "/task/:id/edit",
     name: "EditTask",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/TaskForm"),
+    component: () => import("../views/TaskForm"),
   },
 ];
 

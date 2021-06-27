@@ -14,23 +14,22 @@
 </template>
 
 <script>
-import TaskCard from "@/views/TaskCard";
 import TaskServiceClass from "@/Services/TaskService";
 const TaskService = new TaskServiceClass();
 
 export default {
   name: "TaskList",
-  components: { TaskCard },
+  components: {
+    TaskCard: () => import("@/views/TaskCard"),
+  },
   computed: {
-    taskList() {
-      let taskList = this.$store.getters.getTaskList;
+    openedTasks() {
+      let taskList = this.$store.getters.getOpenedTasks;
       return taskList.sort(TaskService.compareByCreatedTime);
     },
-    openedTasks() {
-      return this.taskList.filter((task) => task.completed === false);
-    },
     completedTasks() {
-      return this.taskList.filter((task) => task.completed === true);
+      let taskList = this.$store.getters.getCompletedTasks;
+      return taskList.sort(TaskService.compareByCreatedTime);
     },
   },
 };
